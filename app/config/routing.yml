@@ -1,0 +1,8 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+dsarhoya_dsy_easy_admin:
+    resource: "@dsarhoyaDSYEasyAdminBundle/Controller/"
+    type:     annotation
+    prefix: /ea

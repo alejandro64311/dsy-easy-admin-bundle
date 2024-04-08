@@ -1,0 +1,26 @@
+# The configuration options are explained in detail in the bundle documentation,
+# which is published at https://github.com/javiereguiluz/EasyAdminBundle
+easy_admin:
+    entities:
+        SubTag:
+            class: AppBundle\Entity\SubTag
+            controller: AppBundle\Controller\SubTagController
+            # disabled_actions: ['show']
+            list:
+                title: menu.sub_tags
+                # dql_filter: "entity.deletedAt is null"
+                sort: ['name', 'ASC']
+                actions:
+                    - { name: 'new'}
+                    - { name: 'edit'}
+                    - { name: 'delete'}
+                    - { name: 'show'}
+                fields:
+                    - { property: 'name'}
+            search:
+                fields: [name]
+                sort: ['name', 'ASC']
+            form:
+                fields:
+                    - { type: 'group', css_class: 'col-sm-6', label: 'app.basic', icon: 'pencil' }
+                    - { property: 'name', label: 'entity.property.name' }

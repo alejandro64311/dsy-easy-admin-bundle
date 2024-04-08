@@ -1,0 +1,5 @@
+{% if item.fullFileKey %}
+    <a target="_blank" href="{{ fileUrl(item.fullFileKey, { signed: true }) }}" class="btn btn-info"><i class="fa fa-file"></i></a>
+{% else %}
+    {{'No file'|trans}}
+{% endif %}

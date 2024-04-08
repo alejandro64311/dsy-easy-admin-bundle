@@ -1,0 +1,33 @@
+# This file sets the configuration options related to the backend design.
+# If your backend is simple, you probably can rely on the default values of
+# the options and just define the value of the 'site_name' option.
+#
+# NOTE: this demo application splits the backend configuration into several
+# small files for educational purposes. In your application you can put the
+# entire backend configuration in just one file.
+#
+# The configuration options are explained in detail in the bundle documentation,
+# which is published at https://github.com/javiereguiluz/EasyAdminBundle
+easy_admin:
+    site_name: 'Greenspot'
+#    homepage:
+#        type: entity
+#        resource: 'User'
+    formats:
+        date:     'd/m/Y'
+        time:     'H:i'
+        datetime: 'd/m/Y H:i a'
+#    default_entity_name: Company
+    design:
+        templates:
+            # Twig namespace template syntax
+            list: '@dsarhoyaDSYEasyAdmin/Default/list.html.twig'
+            # list: 'test.html.twig'
+        # brand_color: '#F4A610'
+#        form_theme: 'horizontal'
+        color_scheme: 'dark'
+        form_theme: 'vertical'
+        assets:
+            css:
+                # - 'assets/css/easyadmin.css'
+            # favicon: '/assets/backend/favicon.png'

@@ -1,0 +1,12 @@
+<a role="button" 
+   class="btn btn-info" 
+   href="{{ path('easyadmin', {entity: entity_config.dsy.children_entity, action: 'list', 'menuIndex': 0, 'parentEntityName': entity_config.name, 'parentEntityId': item.id}) }}" 
+   {% if entity_config.dsy.children_title is defined %}
+    title="{{ entity_config.dsy.children_title|trans() }}"
+    {% endif %}
+    >
+   {% if entity_config.dsy.children_fa_icon is defined %}
+        <i class="fa {{entity_config.dsy.children_fa_icon}}"></i>
+    {% endif %}
+    {{ (entity_config.dsy.children_title is defined ? entity_config.dsy.children_title : 'children')|trans() }}
+</a>

@@ -1,0 +1,4 @@
+{{ include('@EasyAdmin/default/field_boolean.html.twig') }}
+{% if value == false %}
+    <a href="{{path('dsy_easy_admin_send_validation_email', {id: item.id})}}">Enviar email</a>
+{% endif %}

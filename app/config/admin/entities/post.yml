@@ -1,0 +1,39 @@
+# The configuration options are explained in detail in the bundle documentation,
+# which is published at https://github.com/javiereguiluz/EasyAdminBundle
+easy_admin:
+    entities:
+        Post:
+            class: AppBundle\Entity\Post
+            # controller: AppBundle\Controller\Admin\CompanyController
+            # disabled_actions: ['show']
+            dsy:
+                children_entity: Tag
+                children_title: Tags
+                children_fa_icon: fa-users
+            list:
+                title: menu.post
+                # dql_filter: "entity.deletedAt is null"
+                sort: ['title', 'ASC']
+                actions:
+                    - { name: 'new'}
+                    - { name: 'edit'}
+                    - { name: 'delete'}
+                    - { name: 'show'}
+                fields:
+                    - { property: 'title'}
+                    - { property: 'children', label: 'Tags', template: '@dsarhoyaDSYEasyAdmin/Fields/children.html.twig' }
+                    - { property: 'fullFileKey', label: 'File', template: '@dsarhoyaDSYEasyAdmin/Fields/s3FullFileKey.html.twig' }
+            show:
+                fields:
+                    - { property: 'title'}
+                    - { property: 'body'}
+                    - { property: 'fullFileKey', label: 'File', template: '@dsarhoyaDSYEasyAdmin/Fields/s3FullFileKey.html.twig' }
+            search:
+                fields: [title, body]
+                sort: ['title', 'ASC']
+            form:
+                fields:
+                    - { type: 'group', css_class: 'col-sm-6', label: 'app.basic', icon: 'pencil' }
+                    - { property: 'title', label: 'entity.property.title' }
+                    - { property: 'body', label: 'entity.property.body' }
+                    - { property: 'file', label: 'Archivo', css_class: 'large', type: 'file', type_options: { is_image: false, file_url_options: { signed: true } } }

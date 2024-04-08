@@ -1,0 +1,9 @@
+{% extends '@EasyAdmin/default/list.html.twig' %}
+
+{% block search_form %}
+    {% if app.request.get('parentEntityName') and app.request.get('parentEntityId') %}
+        <input type="hidden" name="parentEntityName" value="{{app.request.get('parentEntityName')}}">
+        <input type="hidden" name="parentEntityId" value="{{app.request.get('parentEntityId')}}">
+    {% endif %}
+    {{parent()}}
+{% endblock %}
